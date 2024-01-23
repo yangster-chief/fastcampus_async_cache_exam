@@ -20,8 +20,8 @@ abstract class ApiService {
   Future<List<ToDo>> getToDos();
 
   @POST("/todo")
-  Future<ToDo> createToDo();
+  Future<ToDo> createToDo(@Body() ToDo toDo);
 
-  @PATCH("/todo")
+  @PATCH("/todo/{id}")
   Future<ToDo> updateToDo(@Path('id') String id);
 }
